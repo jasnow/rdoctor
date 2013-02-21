@@ -19,7 +19,9 @@ Or install it yourself as:
 ## Usage
 
 - **rdoctor** (no arguments check following technolgies (very quick):
- - rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode
+```
+rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode
+```
 
 - **rdoctor 1** ('1' argument adds one-line env output too)
 
