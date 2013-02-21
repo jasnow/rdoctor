@@ -1,6 +1,6 @@
 # Rdoctor
 
-Script to check that the Rails stack in installed and read to use.
+Script to check that the following Rails technolgies are installed and read to use.
 
 ## Installation
 
