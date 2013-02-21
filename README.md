@@ -46,7 +46,7 @@ rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, 
 ## To run the Tests
 
 - **rake** (to run minitests tests)
-- **rake features** (to run cucumber tests)
+- **rake features** (to run command line (cucumber) tests)
 
 ## Contributing
 
