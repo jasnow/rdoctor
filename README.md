@@ -18,16 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-- **rdoctor**
+- **rdoctor** (no arguments check following technolgies (very quick):
+ - rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode
 
-- **rdoctor b**
+- **rdoctor 1** ('1' argument adds one-line env output too)
 
-- **rdoctor 1**
+- **rdoctor m** ('m' argument adds  multiple-line env output too)
 
-- **rdoctor m**
+- **rdoctor b** ('b' argument adds 'brew doctor' too; usually takes a long time)
 
-- When you execute 'rdoctor --help', you get this:
-
+- When you execute '**rdoctor --help**', you get this:
+```
     Usage: rdoctor [ b ] [ 1 ] [ m ]
         -- No arguments check following technolgies (very quick)
             -- rvm rails bundle brew gem psql mysql sqlite3 git ruby heroku
@@ -35,6 +36,7 @@ Or install it yourself as:
         -- 'b' add 'brew doctor' run too.
         -- '1' add one-line env output too.
         -- 'm' add multiple-line env output too.
+```
 
 ## Contributing
 

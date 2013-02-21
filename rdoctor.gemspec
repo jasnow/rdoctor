@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Health check of Rails Stack}
   gem.summary       = %q{Runs health check on the following technolgies: 
 rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/jasnow/rdoctor"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
