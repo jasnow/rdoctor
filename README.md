@@ -1,6 +1,9 @@
 # Rdoctor
 
-Script to check that the following Rails technolgies are installed and read to use.
+Script to check that the following Rails technolgies are installed and read to use:
+```
+rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode
+```
 
 ## Installation
 
