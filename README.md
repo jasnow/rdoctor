@@ -43,6 +43,11 @@ rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, 
         -- 'm' add multiple-line env output too.
 ```
 
+## To run the Tests
+
+- **rake** (to run minitests tests)
+- **rake features** (to run cucumber tests)
+
 ## Contributing
 
 1. Fork it
