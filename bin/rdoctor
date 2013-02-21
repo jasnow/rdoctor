@@ -1,0 +1,177 @@
+#! /bin/bash
+
+if [ "X$1X" == "X--helpX" ] ; then
+    echo "Usage: `basename $0` [ b ] [ 1 ] [ m ]
+    -- No arguments check following technolgies (very quick)
+        -- rvm rails bundle brew gem psql mysql sqlite3 git ruby heroku
+        -- travis xcode
+    -- 'b' add 'brew doctor' run too.
+    -- '1' add one-line env output too.
+    -- 'm' add multiple-line env output too."
+    exit
+fi
+
+function binecho() {
+    /bin/echo ".\c"
+}
+function chkv2() {
+    STRV=`$1 --version |grep -i $1 |grep "[a-zA-Z]" | awk '{ print tolower($1) }'`
+    #echo "STRV=[" ${STRV} "]"
+    if [ "X${STRV}X" == "X$1X" ] ; then
+        binecho # "$1 installed"
+    else
+        if [ "X${STRV}X" == "X$2X" ] ; then
+            binecho #" $1 installed"
+        else
+            echo "$1 NOT installed"
+        fi
+    fi
+}
+
+function chkv1() {
+    STRV=`$1 -version |grep -i $1 |grep "[a-zA-Z]" | awk '{ print tolower($1) }'`
+    #echo "STRV=[" ${STRV} "]"
+    if [ "X${STRV}X" == "X$1X" ] ; then
+        binecho # "$1 installed"
+    else
+        if [ "X${STRV}X" == "X$2X" ] ; then
+            binecho #" $1 installed"
+        else
+            echo "$1 NOT installed"
+        fi
+    fi
+}
+
+function chkwhich() {
+    STRV=`which $1 |sed -e "s,.*/,,"`
+    #echo "STRV=[" ${STRV} "]"
+    if [ "X${STRV}X" == "X$1X" ] ; then
+        binecho # "$1 installed"
+    else
+        echo "$1 NOT installed"
+    fi
+    CMD="${CMD} $1"
+}
+
+function chkfilesize() {
+    STRV=`wc -l $1 |awk '{ print $1 }'`
+    #echo "STRV=[" ${STRV} "]"
+    if [ "X${STRV}X" == "X$2X" ] ; then
+        binecho # "$1 file exists"
+    else
+        echo # "$1 file DOES NOT exists"
+    fi
+}
+
+function chkdbfile() {
+    STRV=`egrep  -c "test:|development:|production:" $1`
+    #echo "STRV=[" ${STRV} "]"
+    if [ "X${STRV}X" == "X3X" ] ; then
+        binecho # "$1 file exists"
+    else
+        echo # "$1 file DOES NOT exists"
+    fi
+}
+
+function chk4editor() {
+    STRV=`env |grep EDITOR |awk -F'=' '{ print $1 }'`
+    echo "STRV=[" ${STRV} "]"
+    if [ "X${STRV}X" == "X3X" ] ; then
+        binecho # "EDITOR env var exists"
+    #else
+    #    echo "EDITOR env var DOES NOT exists"
+    fi
+    CMD="${CMD} $1"
+}
+
+function chktravisfile() {
+    FILEN=".travis.yml"
+    if [ "X`ls ${FILEN}`X" == "X${FILEN}X" ] ; then
+        binecho # "$1 file exists"
+    else
+        echo # "${FILEN} file DOES NOT exists"
+    fi
+}
+
+chkwhich rvm    # instead of "chkv2 rvm"
+chkwhich rails  # instead of "chkv2 rails"
+chkwhich bundle # instead of "chkv2 bundle bundler"
+chkwhich brew
+chkwhich gem
+chkwhich psql # postgresql
+chkwhich mysql
+chkwhich sqlite3
+chkwhich git
+chkwhich ruby
+chkwhich heroku
+
+chkv1 /usr/bin/xcodebuild
+
+chktravisfile
+
+chkdbfile config/database.yml
+
+chkfilesize .rvmrc 1
+
+if [ "X$1X" == "XbX" ] ; then
+    if [ "X`chkwhich brew`X" == "X.X" ] ; then
+        if [ "X`brew doctor`X" = "XYour system is raring to brew.X" ] ; then
+            binecho
+        else
+            echo "BREW DOCTOR:"
+            echo "Need to run brew doctor"
+        fi
+    fi
+fi
+
+echo
+# ONE LINE ENV OUTPUT
+if [ "X$1X" == "X1X" ] ; then
+    echo
+    for i in ${CMD} ; do
+        echo "$i:" `echo $i |sed -e "s,$, --version," |sh |awk '{ print $1, $2, $3 }'`
+    done
+    echo "EDITOR=[" ${EDITOR} "]"
+    echo "RACK_ENV=[" ${RACK_ENV} "]"
+    echo "rvm_prefix=[" ${rvm_prefix} "]"
+    echo "rvm_version=[" ${rvm_version} "]"
+fi
+
+echo
+# MULTIPLE LINE ENV OUTPUT
+if [ "X$1X" == "XmX" ] ; then
+    if [ "X`chkwhich rvm`X" == "X.X" ] ; then
+        echo "RVM ENV:"
+        # Covers ${GEM_HOME} ${IRBRC} ${MY_RUBY_HOME} ${RUBY_VERSION} ${rvm_path} 
+        rvm env |sed -e "s,^,    ,"
+    else
+        echo "Skipping RVM ENV"
+    fi
+
+    echo
+    if [ "X`chkwhich brew`X" == "X.X" ] ; then
+        echo "BREW ENV:"
+        brew --env |sed -e "s,^,    ,"
+    else
+        echo "Skipping BREW ENV"
+    fi
+
+    echo
+    if [ "X`chkwhich bundle`X" == "X.X" ] ; then
+        echo "BUNDLE CONFIG:"
+        bundle config
+        echo
+        echo "BUNDLE CHECK:"
+        bundle check
+        echo
+        echo "BUNDLE OUTDATED:"
+        bundle outdated
+    else
+        echo "Skipping BUNDLE commands"
+    fi
+fi
+
+# xx. "rake -T" - maybe?
+# xx. rbenv
+# xx. Check rvm's gemsets?
+# xx. ssh or "ssh-keygen" 
