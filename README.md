@@ -9,6 +9,7 @@ rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, 
 
 [![Dependency Status](https://gemnasium.com/jasnow/rdoctor.png)](https://gemnasium.com/jasnow/rdoctor.png)
 
+
 ## Installation
 
 Add this line to your application's Gemfile:
