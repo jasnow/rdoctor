@@ -5,6 +5,10 @@ Script to check that the following Rails technolgies are installed and read to u
 rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode
 ```
 
+[![Build Status](https://travis-ci.org/jasnow/rdoctor.png)](https://travis-ci.org/jasnow/rdoctor)
+
+[![Dependency Status](https://gemnasium.com/jasnow/rdoctor.png)](https://gemnasium.com/jasnow/rdoctor.png)
+
 ## Installation
 
 Add this line to your application's Gemfile:
