@@ -5,14 +5,18 @@ if [ "X$1X" == "X--helpX" ] ; then
     -- No arguments check following technolgies (very quick)
         -- rvm rails bundle brew gem psql mysql sqlite3 git ruby heroku
         -- travis xcode
-    -- 'b' add 'brew doctor' run too.
+    -- 'b' add 'brew doctor' run too. (mac only)
     -- '1' add one-line env output too.
     -- 'm' add multiple-line env output too."
     exit
 fi
 
 function binecho() {
-    /bin/echo ".\c"
+    if [ "X`uname -s`" == "XLinux" ] ; then
+        /bin/echo -n "."
+    else
+        /bin/echo ".\c"
+    fi
 }
 function chkv2() {
     STRV=`$1 --version |grep -i $1 |grep "[a-zA-Z]" | awk '{ print tolower($1) }'`
@@ -96,7 +100,6 @@ function chktravisfile() {
 chkwhich rvm    # instead of "chkv2 rvm"
 chkwhich rails  # instead of "chkv2 rails"
 chkwhich bundle # instead of "chkv2 bundle bundler"
-chkwhich brew
 chkwhich gem
 chkwhich psql # postgresql
 chkwhich mysql
@@ -105,7 +108,12 @@ chkwhich git
 chkwhich ruby
 chkwhich heroku
 
-chkv1 /usr/bin/xcodebuild
+if [ "X`uname -s`" == "XLinux" ] ; then
+    echo "FYI: Skipping 'chkwhich brew' and xcodebuild check but no output." > /dev/null
+else
+    chkwhich brew
+    chkv1 /usr/bin/xcodebuild
+fi
 
 chktravisfile
 
@@ -114,12 +122,16 @@ chkdbfile config/database.yml
 chkfilesize .rvmrc 1
 
 if [ "X$1X" == "XbX" ] ; then
-    if [ "X`chkwhich brew`X" == "X.X" ] ; then
-        if [ "X`brew doctor`X" = "XYour system is raring to brew.X" ] ; then
-            binecho
-        else
-            echo "BREW DOCTOR:"
-            echo "Need to run brew doctor"
+    if [ "X`uname -s`" == "XLinux" ] ; then
+        ehco "b cmd line option is not supported on Linux"
+    else
+        if [ "X`chkwhich brew`X" == "X.X" ] ; then
+            if [ "X`brew doctor`X" = "XYour system is raring to brew.X" ] ; then
+                binecho
+            else
+                echo "BREW DOCTOR:"
+                echo "Need to run brew doctor"
+            fi
         fi
     fi
 fi
@@ -149,11 +161,15 @@ if [ "X$1X" == "XmX" ] ; then
     fi
 
     echo
-    if [ "X`chkwhich brew`X" == "X.X" ] ; then
-        echo "BREW ENV:"
-        brew --env |sed -e "s,^,    ,"
+    if [ "X`uname -s`" == "XLinux" ] ; then
+        echo "m (brew --env) is not supported on Linux"
     else
-        echo "Skipping BREW ENV"
+        if [ "X`chkwhich brew`X" == "X.X" ] ; then
+            echo "BREW ENV:"
+            brew --env |sed -e "s,^,    ,"
+        else
+            echo "Skipping BREW ENV"
+        fi
     fi
 
     echo
