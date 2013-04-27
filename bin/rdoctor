@@ -123,7 +123,7 @@ chkfilesize .rvmrc 1
 
 if [ "X$1X" == "XbX" ] ; then
     if [ "X`uname -s`" == "XLinux" ] ; then
-        ehco "b cmd line option is not supported on Linux"
+        echo "b cmd line option is not supported on Linux"
     else
         if [ "X`chkwhich brew`X" == "X.X" ] ; then
             if [ "X`brew doctor`X" = "XYour system is raring to brew.X" ] ; then
