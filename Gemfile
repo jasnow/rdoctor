@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rake'
 gem 'cucumber'
 gem 'aruba'
-gem 'heroku'
 gem 'rails'
 gem 'json'
 
