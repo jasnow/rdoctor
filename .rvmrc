@@ -1,1 +1,1 @@
-rvm --default use ruby-1.9.3-p448@rdoctor --create
+rvm --default use ruby-2.0.0-p247@rdoctor --create
