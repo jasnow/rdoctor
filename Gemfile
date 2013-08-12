@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'cucumber'
+gem 'cucumber', '1.3.2'
 gem 'aruba'
 gem 'rails', '4.0.0'
 gem 'json'
