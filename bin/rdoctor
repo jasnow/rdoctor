@@ -126,7 +126,7 @@ if [ "X$1X" == "XbX" ] ; then
         echo "b cmd line option is not supported on Linux"
     else
         if [ "X`chkwhich brew`X" == "X.X" ] ; then
-            if [ "X`brew doctor`X" = "XYour system is raring to brew.X" ] ; then
+            if [ "X`brew doctor`X" = "XYour system is ready to brew.X" ] ; then
                 binecho
             else
                 echo "BREW DOCTOR:"
