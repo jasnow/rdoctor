@@ -1,6 +1,6 @@
 # Rdoctor
 
-Script to check that the following Rails technolgies are installed and read to use:
+Script to check that the following Rails technologies are installed and read to use:
 ```
 rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode
 ```
@@ -26,7 +26,7 @@ Or install it yourself as:
 
 ## Usage
 
-- **rdoctor** (no arguments check following technolgies (very quick):
+- **rdoctor** (no arguments check following technologies (very quick):
 ```
 rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode
 ```
@@ -40,7 +40,7 @@ rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, 
 - When you execute '**rdoctor --help**', you get this:
 ```
     Usage: rdoctor [ b ] [ 1 ] [ m ]
-        -- No arguments check following technolgies (very quick)
+        -- No arguments check following technologies (very quick)
             -- rvm rails bundle brew gem psql mysql sqlite3 git ruby heroku
             -- travis xcode
         -- 'b' add 'brew doctor' run too.

@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Al Snow"]
   spec.email         = ["jasnow@hotmail.com"]
   spec.description   = %q{Health check of Rails Stack}
-  spec.summary       = %q{Runs health check on the following technolgies: rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode}
+  spec.summary       = %q{Runs health check on the following technologies: rvm, rails, bundle, brew, gem, psql, mysql, sqlite3, git, ruby, heroku, travis, xcode}
   spec.homepage      = "https://github.com/jasnow/rdoctor"
   spec.license       = "MIT"
 
