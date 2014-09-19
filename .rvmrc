@@ -1,1 +1,1 @@
-rvm --default use ruby-2.1.2@rdoctor --create
+rvm --default use ruby-2.1.3@rdoctor --create
