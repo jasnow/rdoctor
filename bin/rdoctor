@@ -155,7 +155,7 @@ echo
 if [ "X$1X" == "XmX" ] ; then
     if [ "X`chkwhich rvm`X" == "X.X" ] ; then
         echo "RVM ENV:"
-        # Covers ${GEM_HOME} ${IRBRC} ${MY_RUBY_HOME} ${RUBY_VERSION} ${rvm_path} 
+        # Covers ${GEM_HOME} ${IRBRC} ${MY_RUBY_HOME} ${RUBY_VERSION} ${rvm_path}
         rvm env |sed -e "s,^,    ,"
     else
         echo "Skipping RVM ENV"
@@ -191,4 +191,4 @@ fi
 # xx. "rake -T" - maybe?
 # xx. rbenv
 # xx. Check rvm's gemsets?
-# xx. ssh or "ssh-keygen" 
+# xx. ssh or "ssh-keygen"

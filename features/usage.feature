@@ -51,4 +51,3 @@ Usage: rdoctor [ b ] [ 1 ] [ m ]
     Then the stderr should contain "ruby-version"
     Then the stderr should contain "ruby-gemset"
     #### Then the stdout should contain "BREW DOCTOR"
-
