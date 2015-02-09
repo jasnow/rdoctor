@@ -27,10 +27,10 @@ GEM
     multi_json (1.10.1)
     multi_test (0.1.1)
     rake (10.4.2)
-    rspec-expectations (3.1.2)
+    rspec-expectations (3.2.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.1.0)
-    rspec-support (3.1.2)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.1)
 
 PLATFORMS
   ruby
