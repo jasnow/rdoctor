@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "cucumber"
   spec.add_development_dependency "aruba"
   spec.add_development_dependency "json"
+  spec.add_development_dependency "minitest"
 end
