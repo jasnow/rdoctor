@@ -41,7 +41,7 @@ PLATFORMS
 
 DEPENDENCIES
   aruba
-  bundler (~> 1.3)
+  bundler
   cucumber (= 2.0.0.rc.5)
   json
   minitest
