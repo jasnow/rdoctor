@@ -29,16 +29,16 @@ GEM
     iniparse (1.4.0)
     json (1.8.3)
     minitest (5.7.0)
-    multi_json (1.11.0)
+    multi_json (1.11.1)
     multi_test (0.1.2)
-    overcommit (0.25.0)
+    overcommit (0.26.0)
       childprocess (~> 0.5.6)
       iniparse (~> 1.4)
     rake (10.4.2)
-    rspec-expectations (3.2.1)
+    rspec-expectations (3.3.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.2.0)
-    rspec-support (3.2.2)
+      rspec-support (~> 3.3.0)
+    rspec-support (3.3.0)
 
 PLATFORMS
   ruby
