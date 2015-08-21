@@ -18,16 +18,14 @@ Usage: rdoctor [ b ] [ 1 ] [ m ]
     When I run `rdoctor`
     Then the stderr should contain "travis.yml: No such file or directory"
     Then the stderr should contain "config/database.yml: No such file or directory"
-    Then the stderr should contain "ruby-version"
-    Then the stderr should contain "ruby-gemset"
+    Then the stderr should contain "rvmrc"
 
 ## Then the stdout should contain "sqlite3 NOT installed"
   Scenario: '1' (one) argument
     When I run `rdoctor 1`
     Then the stderr should contain "travis.yml: No such file or directory"
     Then the stderr should contain "config/database.yml: No such file or directory"
-    Then the stderr should contain "ruby-version"
-    Then the stderr should contain "ruby-gemset"
+    Then the stderr should contain "rvmrc"
     Then the stdout should contain "ruby:"
 
 ## Then the stdout should contain "sqlite3 NOT installed"
@@ -36,8 +34,7 @@ Usage: rdoctor [ b ] [ 1 ] [ m ]
     When I run `rdoctor m`
     Then the stderr should contain "travis.yml: No such file or directory"
     Then the stderr should contain "config/database.yml: No such file or directory"
-    Then the stderr should contain "ruby-version"
-    Then the stderr should contain "ruby-gemset"
+    Then the stderr should contain "rvmrc"
     Then the stdout should contain "RVM ENV:"
     Then the stdout should contain "BUNDLE CONFIG:"
     Then the stdout should contain "BUNDLE CHECK:"
@@ -48,6 +45,5 @@ Usage: rdoctor [ b ] [ 1 ] [ m ]
     When I run `rdoctor b`
     Then the stderr should contain "travis.yml: No such file or directory"
     Then the stderr should contain "config/database.yml: No such file or directory"
-    Then the stderr should contain "ruby-version"
-    Then the stderr should contain "ruby-gemset"
+    Then the stderr should contain "rvmrc"
     #### Then the stdout should contain "BREW DOCTOR"

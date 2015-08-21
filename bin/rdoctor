@@ -119,8 +119,7 @@ chktravisfile
 
 chkdbfile config/database.yml
 
-chkfilesize .ruby-version 1
-chkfilesize .ruby-gemset 1
+chkfilesize .rvmrc 1
 
 if [ "X$1X" == "XbX" ] ; then
     if [ "X`uname -s`" == "XLinux" ] ; then
