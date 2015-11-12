@@ -38,10 +38,10 @@ GEM
       childprocess (~> 0.5.6)
       iniparse (~> 1.4)
     rake (10.4.2)
-    rspec-expectations (3.3.1)
+    rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.3.0)
-    rspec-support (3.3.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.0)
     thor (0.19.1)
 
 PLATFORMS
