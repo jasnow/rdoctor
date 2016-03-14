@@ -39,7 +39,7 @@ GEM
     overcommit (0.32.0)
       childprocess (~> 0.5.8)
       iniparse (~> 1.4)
-    rake (11.1.0)
+    rake (11.1.1)
     rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
