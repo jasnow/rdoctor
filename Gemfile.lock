@@ -34,7 +34,7 @@ GEM
     iniparse (1.4.2)
     json (1.8.3)
     minitest (5.8.4)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     multi_test (0.1.2)
     overcommit (0.33.0)
       childprocess (~> 0.5.8)
