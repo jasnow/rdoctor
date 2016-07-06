@@ -29,7 +29,7 @@ GEM
       gherkin (~> 4.0)
     cucumber-wire (0.0.1)
     diff-lcs (1.2.5)
-    ffi (1.9.11)
+    ffi (1.9.12)
     gherkin (4.0.0)
     iniparse (1.4.2)
     json (2.0.1)
