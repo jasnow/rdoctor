@@ -32,7 +32,7 @@ GEM
     ffi (1.9.18)
     gherkin (4.1.1)
     iniparse (1.4.2)
-    json (2.0.4)
+    json (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
     multi_test (0.1.2)
