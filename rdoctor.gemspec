@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'cucumber'
+  spec.add_development_dependency 'cucumber', '3.0.0.pre.2' # lOCKED DOWN
   spec.add_development_dependency 'aruba'
   spec.add_development_dependency 'json'
   spec.add_development_dependency 'minitest'
