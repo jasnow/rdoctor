@@ -18,7 +18,7 @@ GEM
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     contracts (0.16.0)
-    cucumber (3.0.1)
+    cucumber (3.0.2)
       builder (>= 2.1.2)
       cucumber-core (~> 3.0.0)
       cucumber-expressions (~> 4.0.3)
