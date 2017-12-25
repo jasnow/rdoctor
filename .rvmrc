@@ -1,1 +1,1 @@
-rvm use 2.5.0-rc1@ruby2.5-no-rails --create
+rvm use 2.5.0@ruby2.5-no-rails --create
